@@ -12,11 +12,7 @@ import { UsePreview } from "../../hooks/usePreview/use-preview";
 
 export const InitialForm = () => {
   const navigate = useNavigate();
-  const {
-    handleSubmit,
-    register,
-    formState: { errors },
-  } = useForm<DataFormInitial>({
+  const { handleSubmit, register } = useForm<DataFormInitial>({
     mode: "onBlur",
     resolver: zodResolver(SchemaFormInitial),
   });
