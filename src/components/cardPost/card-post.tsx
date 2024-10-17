@@ -8,6 +8,8 @@ type CardPostProps = {
 
 export const CardPost = ({ data }: CardPostProps) => {
   const { user } = UseWebPage();
+
+  console.log(data);
   return (
     <main className="max-w-96 my-5">
       <div className="py-2 flex gap-1 items-center">
@@ -28,16 +30,15 @@ export const CardPost = ({ data }: CardPostProps) => {
         <h1>{data.title}</h1>
         <p className="text-xs text-gray-500 py-1 pb-5">{data.description}</p>
       </section>
-      {data.photo !== "" ||
-        (data.photo !== null && (
-          <section className="w-full flex justify-center h-80  ">
-            <img
-              src={data.photo}
-              alt=""
-              className="object-cover min-w-[300px] max-w-[400px] max-h-[300px]"
-            />
-          </section>
-        ))}
+      {data.photo !== "" && data.photo !== null && (
+        <section className="w-full flex justify-center h-80  ">
+          <img
+            src={data.photo}
+            alt=""
+            className="object-cover min-w-[300px] max-w-[400px] max-h-[300px]"
+          />
+        </section>
+      )}
     </main>
   );
 };
