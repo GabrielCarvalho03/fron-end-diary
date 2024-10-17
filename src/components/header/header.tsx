@@ -47,7 +47,7 @@ export const Header = () => {
         ref={qrCodeRef}
       >
         <QRCodeSVG
-          value={`${import.meta.env.VITE_URL_SAAS}/${user.userId}`}
+          value={`${import.meta.env.VITE_URL_SAAS}/webPage/${user.userId}`}
           size={50}
         />
       </div>
